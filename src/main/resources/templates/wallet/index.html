@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+
+<div th:each="wallet : ${wallet}">
+    <a th:href="@{/api/v1/wallets/{id}(id=${wallet.getId()})}"
+       th:text="${wallet.getName() + ', ' + wallet.getId()+ ', ' + wallet.getBalance()}"/>
+</div>
+
+<br/>
+<hr/>
+
+<a href="/wallet/new">Create new wallet</a>
+
+</body>
+</html>
